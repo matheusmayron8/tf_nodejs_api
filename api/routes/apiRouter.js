@@ -86,7 +86,7 @@ apiRouter.post(endpoint + 'notes', checkToken, (req, res) => {
 apiRouter.put(endpoint + 'notes/:id', checkToken, (req, res) => {
     let id = req.params.id
     console.log(req.body)
-    if (req.body.completed != undefined) {
+    if (req.body.completed == undefined) {
         res.status(400).json({message: 'Campo [completed] é obrigatório.'})
         return
     }
